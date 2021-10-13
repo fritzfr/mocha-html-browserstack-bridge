@@ -4,7 +4,7 @@ const http = require('http');
 const handler = require('serve-handler');
 
 const PORT = 3000;
-const bslArgs = { force: true, logFile: 'browserstack.log', key: process.env.BROWSERSTACK_KEY };
+const bslArgs = { force: true, logFile: 'browserstack.log', key: process.env.BROWSERSTACK_KEY, localIdentifier: 'abc123' };
 
 exports.mochaGlobalSetup = async function () {
 	this.server = http.createServer((req, res) => handler(req, res));
